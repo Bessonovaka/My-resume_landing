@@ -1,0 +1,40 @@
+.sandwich {
+    cursor: pointer;
+    height: 40px;
+    position: relative;
+    top: 15px;
+    width: 40px;
+    z-index: 15;
+    background-color: rgba(#967b71, .6);
+    @media screen and (min-width: $mobile + 1) {
+        display: none;   
+    }
+    &.is {
+        &-active {
+            .sandwich__line {
+                &--top {
+                    top: 20px;
+                    transform: rotate(45deg);
+                }
+                &--middle { opacity: 0; }
+                &--bottom {
+                    top: 20px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    &__line {
+        background-color: #fff;
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition: all linear .4s;
+        width: 90%;
+        left: 5%;
+        &--top { top: 5px; }
+        &--middle { top: 19px; }
+        &--bottom { top: 33px; }
+    }
+}
+

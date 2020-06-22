@@ -1,0 +1,105 @@
+.portfolio{
+    &__body{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        @media screen and (min-width: $tablet + 1) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        
+        }
+    }
+    &__info{
+        @media screen and (min-width: $tablet + 1) {
+            -ms-grid-column-align: center;;
+            width: 100%;
+        }
+        @media screen and (max-width: $tablet) {
+            margin-bottom: 0;
+        }
+    }
+    &__photo{
+        width: 500px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 1s;
+        animation-name: slide;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @media screen and (max-width: $mobile) {
+           display: none;
+        }
+    }
+}
+.portfolio__photo:hover{
+    transform: scale(1.5);
+    @media screen and (max-width: $tablet) {
+        transform: none;
+    }
+}
+.swiper-wrapper{
+    width: 500px;
+    height: 300px;
+    margin-left: 50px;
+    margin-top: 25px;
+    position: relative;
+    overflow: hidden;
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
+}
+.swiper-slide_1{
+    animation-delay: 7.5s;
+    background-image: url('../images/content/portfolio-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.swiper-slide_2{
+    animation-delay: 5s;
+    background-image: url('../images/content/portfolio-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.swiper-slide_3{
+    animation-delay: 2.5s;
+    background-image: url('../images/content/portfolio-3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.swiper-slide_4{
+    animation-delay: 0s;
+    background-image: url('../images/content/portfolio-4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes slide {
+    from {
+        top: 0;
+        left: 0;
+    }
+    12.5% {
+        transform: translate(0px, 0px);
+    }
+    25% {
+        transform: translate(-500px, 0);
+    }
+    36% {
+        transform: translate(-500px, 300px);
+    }
+    37% {
+        transform: translate(500px, 300px);
+    }
+    87.5% {
+        transform: translate(500px, 0);
+    }
+    to {
+        transform: (0px, 0px);
+    }
+}

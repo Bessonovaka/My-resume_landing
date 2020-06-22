@@ -1,0 +1,23 @@
+mixin footerNavLink(link, text)
+    li.footer-nav__item
+        a(href=link target="_blank").footer-nav__link=text
+
+
+footer.light-bg
+    .container
+        h2
+            a(name="contacts") Ищите меня в сети
+        .footer
+            ul.footer-nav
+                +footerNavLink("https://vk.com/away.php?to=https%3A%2F%2Fwww.superjob.ru%2Fresume%2Fhtml-verstalschik-48723660.html&cc_key=", 'Superjob')
+                +footerNavLink("https://syktyvkar.hh.ru/applicant/resumes/view?resume=c2a707e2ff054fcd410039ed1f77464369446d", 'hh.ru')
+                +footerNavLink("https://geekbrains.ru/users/4396935", 'GeekBrains')
+                +footerNavLink("https://github.com/Bessonovaka?tab=repositories", 'GitHub')
+            ul.footer-nav
+                +footerNavLink("https://vk.com/ketushkinn", 'VK')
+                +footerNavLink("Skype:katushkin23?userinfo", 'Skype')
+                +footerNavLink("https://www.instagram.com/wander_warm/", 'Instagram')
+                +footerNavLink("t.me/ketushkin", 'Telegram')
+            .footer-contacts
+                a(href="mailto:bessonova.en@mail.ru") bessonova.en@mail.ru
+                a(href="tel:+79048625209") +79048625209

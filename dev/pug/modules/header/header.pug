@@ -1,0 +1,19 @@
+mixin mainNavLink(link, text)
+    li.main-nav__item
+        a(href=link).main-nav__link=text
+
+header.header
+    .container
+        .header
+            .sandwich(data-target-id="main-nav" data-target-class-toggle="is-active")
+                .sandwich__line.sandwich__line--top
+                .sandwich__line.sandwich__line--middle
+                .sandwich__line.sandwich__line--bottom
+            span.header__title Резюме
+            nav.main-nav#main-nav
+                ul.main-nav__list
+                    +mainNavLink("#top", 'Главная')
+                    +mainNavLink("#about", 'Обо мне')
+                    +mainNavLink("#skills", 'Навыки')
+                    +mainNavLink("#portfolio", 'Портфолио')
+                    +mainNavLink("#contacts", 'Контaкты')

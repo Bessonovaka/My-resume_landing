@@ -1,0 +1,26 @@
+mixin skillListItem(label, text, percent)
+    li.skills-list__item
+        .skills-list__key
+            span.skills-list__label=label
+        .skills-list__value
+            if(!percent)
+                span.skills-list__text=text
+            else
+                .skill-line
+                    .skill-line__percent(style=`width:${percent}`)
+
+section.s-skills.light-bg
+    .container
+        h2
+            a(name="skills") Навыки
+        .skills
+            .skills__photo-wrapper
+                img(src="static/images/content/skills-img.jpg", alt="Фото профиля").skills__photo
+            ul.skills__list.skills-list
+                +skillListItem('Профиль', 'Front-end разработчик')
+                +skillListItem('HTML', '', '85%')
+                +skillListItem('Инструменты', 'HTML5, Pug')
+                +skillListItem('CSS', '', '80%')
+                +skillListItem('Инструменты', 'SASS/SCSS')
+                +skillListItem('Прочее', '', '60%')
+                +skillListItem('Инструменты', 'Figma, JS, React, Gulp4, Git, БЭМ')
